@@ -50,16 +50,16 @@ public class GameManager : MonoBehaviour
     {
         currentLevel++;
         //string scene = SceneManager.GetActiveScene;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void Home()
     {
-
+        SceneManager.LoadScene(0);
     }
     public void Retry()
     {
         target = 0;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
 
