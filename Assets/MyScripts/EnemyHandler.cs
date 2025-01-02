@@ -15,13 +15,13 @@ public class EnemyHandler : MonoBehaviour
     public GameObject heard_Zomby;
     public GameObject scratchImg;
 
-    public Transform[] normalZombiPositons;
+ /*   public Transform[] normalZombiPositons;
     public Transform[] mediumZombiePos;
-    public Transform[] hardZombiePos;
+    public Transform[] hardZombiePos;*/
 
-    public int normal_zomby_count = 5;
-    public int medium_zomby_count = 4;
-    public int heard_zomby_count = 3;
+   // public int normal_zomby_count = 5;
+   // public int medium_zomby_count = 4;
+    //public int heard_zomby_count = 3;
 
 
     [SerializeField] public Map _map;
@@ -55,16 +55,16 @@ public class EnemyHandler : MonoBehaviour
      //  _map.EnemyMapIconsInst(_map.world_Enemy_transform.Count);
     }
 
-    public void NormalEnemy(GameObject normalEnemy, int count, Transform[] _trns)
+    public void NormalZombie(GameObject normalEnemy, int count, Transform[] _trns)
     {
       
         ZomboyInstanciation(normalEnemy, count, _trns, EnemyData.ZombieType.Normal);
     }
-    private void MediomZomby(GameObject mediomZombie, int count, Transform[] _trns)
+    public void MediomZomby(GameObject mediomZombie, int count, Transform[] _trns)
     {
         ZomboyInstanciation(mediomZombie, count, _trns, EnemyData.ZombieType.Medium);
     }
-    private void HeardZomby(GameObject heardZombie, int count, Transform[] _trns)
+    public void HardZomby(GameObject heardZombie, int count, Transform[] _trns)
     {
         ZomboyInstanciation(heardZombie, count, _trns, EnemyData.ZombieType.Hard);
     }
@@ -164,23 +164,20 @@ public class EnemyHandler : MonoBehaviour
     // it will effect on when plyer shoots the zombie. Zombie health demage and it will die
     public void EnemyDeth(GameObject zombie)
     {
-        if(PlayerHandler.isPlayerDead==true)
+        if (PlayerHandler.isPlayerDead)
             return;
-       // print(zombie.name);
+
         EnemyHealthDamege(zombie);
+
         if (enemyDictionary[zombie].health <= 0)
         {
             GameManager.kils++;
-            print("Kill couont:: " + GameManager.kils);
+            print("Kill count: " + GameManager.kils);
             if (GameManager.kils == GameManager.target)
             {
                 gameManager.LeveComplete();
             }
-           
-            zombie.GetComponent<CapsuleCollider>().enabled = false;
-            zombie.transform.GetChild(0).GetChild(0).GetChild(2).
-                GetChild(0).GetChild(0).GetChild(2).GetChild(0).GetChild(0).
-                GetChild(0).GetComponent<CapsuleCollider>().enabled = false;
+
             enemyDictionary[zombie].anim.SetBool("Attack", false);
             if (scratchImg)
             {
@@ -190,11 +187,48 @@ public class EnemyHandler : MonoBehaviour
             enemyDictionary[zombie].navMeshAgent.isStopped = true;
             enemyDictionary[zombie].anim.SetTrigger("Death");
             _map.RemoveIcon(zombie.transform);
+            zombie.GetComponent<CapsuleCollider>().enabled = false;
+
+            GameObject child = GetChildWithTagRecursive(zombie.transform, "Hand");
+            if (child != null)
+            {
+                print($"Found child with tag 'Hand': {child.name}");
+                child.GetComponent<CapsuleCollider>().enabled = false;
+            }
+            else
+            {
+                Debug.LogError("Child with tag 'Hand' not found!");
+            }
         }
-
-        // StartCoroutine(BulletHit(newObj));
     }
-
+    GameObject GetChildWithTagRecursive(Transform parent, string tag)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.CompareTag(tag))
+            {
+                return child.gameObject;
+            }
+            GameObject result = GetChildWithTagRecursive(child, tag);
+            if (result != null)
+            {
+                return result;
+            }
+        }
+        return null;
+    }
+ /*   GameObject GetChildWithTag(Transform parent, string tag)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.CompareTag(tag))
+            {
+                return child.gameObject;
+            }
+        }
+        return null;
+    }
+*/
     public void EnemyHealthDamege(GameObject zombie)
     {
         if (enemyDictionary[zombie].health <= 0)

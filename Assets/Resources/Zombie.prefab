@@ -1361,7 +1361,7 @@ GameObject:
   - component: {fileID: 7664138083815312220}
   m_Layer: 6
   m_Name: Zombiegirl W Kurniawan
-  m_TagString: Hand
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
