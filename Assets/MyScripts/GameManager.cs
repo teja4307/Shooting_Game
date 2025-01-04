@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager _inst;
     public static int kils = 0;
-    public static int currentLevel = 0;
+    public  static int currentLevel = 0;
     public static int target = 0;
 
     public GameObject LevelCompletPanel;
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     }
     public void LeveComplete()
     {
-        print("Working");
+        //print("Working");
         kils = 0;
         target = 0;
         Invoke(nameof(ShowLeveCmplet),2f);
@@ -38,7 +38,17 @@ public class GameManager : MonoBehaviour
     private void ShowLeveCmplet()
     {
         LevelCompletPanel.SetActive(true);
-       // Debug.Log("Level complete");
+        currentLevel++;
+        if(currentLevel> PlayerPrefs.GetInt("CurrentLevel"))
+        PlayerPrefs.SetInt("CurrentLevel", currentLevel);
+
+        // int temp = PlayerPrefs.GetInt("CurrentLevel");
+        /* if (currentLevel <= )
+         {
+             PlayerPrefs.SetInt("CurrentLevel", currentLevel);
+         }*/
+        print(currentLevel);
+        // Debug.Log("Level complete");
     }
 
     public void GameOver()
@@ -48,12 +58,13 @@ public class GameManager : MonoBehaviour
 
     public void Next()
     {
-        currentLevel++;
+       
         //string scene = SceneManager.GetActiveScene;
         SceneManager.LoadScene(1);
     }
     public void Home()
     {
+       
         SceneManager.LoadScene(0);
     }
     public void Retry()

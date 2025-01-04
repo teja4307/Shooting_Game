@@ -172,7 +172,7 @@ public class EnemyHandler : MonoBehaviour
         if (enemyDictionary[zombie].health <= 0)
         {
             GameManager.kils++;
-            print("Kill count: " + GameManager.kils);
+            //print("Kill count: " + GameManager.kils);
             if (GameManager.kils == GameManager.target)
             {
                 gameManager.LeveComplete();
@@ -192,7 +192,7 @@ public class EnemyHandler : MonoBehaviour
             GameObject child = GetChildWithTagRecursive(zombie.transform, "Hand");
             if (child != null)
             {
-                print($"Found child with tag 'Hand': {child.name}");
+               // print($"Found child with tag 'Hand': {child.name}");
                 child.GetComponent<CapsuleCollider>().enabled = false;
             }
             else
@@ -235,15 +235,22 @@ public class EnemyHandler : MonoBehaviour
             return;
         if (enemyDictionary[zombie].zombieType == EnemyData.ZombieType.Normal)
         {
-            enemyDictionary[zombie].health -= 50;
+            enemyDictionary[zombie].health -= 20;
         }
         if (enemyDictionary[zombie].zombieType == EnemyData.ZombieType.Medium)
         {
-            enemyDictionary[zombie].health -= 40;
+            enemyDictionary[zombie].health -= 5;
         }
         if (enemyDictionary[zombie].zombieType == EnemyData.ZombieType.Hard)
         {
-            enemyDictionary[zombie].health -= 30;
+            if (GameManager.currentLevel <= 6)
+            {
+                enemyDictionary[zombie].health -= 1.6f;
+            }
+            else if(GameManager.currentLevel > 6)
+            {
+                enemyDictionary[zombie].health -= 0.6f;
+            }
         }
         // print(enemyDictionary[zombie].health);
     }
