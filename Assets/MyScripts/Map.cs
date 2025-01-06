@@ -22,7 +22,7 @@ public class Map : MonoBehaviour
 
     private void Awake()
     {
-        // MapTransform = transform as RectTransform;
+       //  MapTransform = transform as RectTransform;
         //  EnemyMapIconsInst(4);
 
     }

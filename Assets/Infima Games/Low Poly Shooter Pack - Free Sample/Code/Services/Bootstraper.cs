@@ -19,7 +19,7 @@ namespace InfimaGames.LowPolyShooterPack
             ServiceLocator.Initialize();
             
             //Game Mode Service.
-            ServiceLocator.Current.Register<IGameModeService>(new GameModeService());
+            ServiceLocator.Current.Register<RGameModeService>(new GameModeService());
             
             #region Sound Manager Service
 

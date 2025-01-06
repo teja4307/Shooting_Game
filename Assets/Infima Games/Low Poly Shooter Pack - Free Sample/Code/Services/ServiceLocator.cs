@@ -7,14 +7,14 @@ using System.Collections.Generic;
 namespace InfimaGames.LowPolyShooterPack
 {
     /// <summary>
-    /// Simple service locator for <see cref="IGameService"/> instances.
+    /// Simple service locator for <see cref="RGameService"/> instances.
     /// </summary>
     public class ServiceLocator
     {
         /// <summary>
         /// Currently registered services.
         /// </summary>
-        private readonly Dictionary<string, IGameService> services = new Dictionary<string, IGameService>();
+        private readonly Dictionary<string, RGameService> services = new Dictionary<string, RGameService>();
 
         public static ServiceLocator Current { get; private set; }
 
@@ -25,7 +25,7 @@ namespace InfimaGames.LowPolyShooterPack
         /// </summary>
         /// <typeparam name="T">The type of the service to lookup.</typeparam>
         /// <returns>The service instance.</returns>
-        public T Get<T>() where T : IGameService
+        public T Get<T>() where T : RGameService
         {
             string key = typeof(T).Name;
             if (!services.ContainsKey(key))
@@ -42,7 +42,7 @@ namespace InfimaGames.LowPolyShooterPack
         /// </summary>
         /// <typeparam name="T">Service type.</typeparam>
         /// <param name="service">Service instance.</param>
-        public void Register<T>(T service) where T : IGameService
+        public void Register<T>(T service) where T : RGameService
         {
             string key = typeof(T).Name;
             if (services.ContainsKey(key))
@@ -59,7 +59,7 @@ namespace InfimaGames.LowPolyShooterPack
         /// Unregisters the service from the current service locator.
         /// </summary>
         /// <typeparam name="T">Service type.</typeparam>
-        public void Unregister<T>() where T : IGameService
+        public void Unregister<T>() where T : RGameService
         {
             string key = typeof(T).Name;
             if (!services.ContainsKey(key))

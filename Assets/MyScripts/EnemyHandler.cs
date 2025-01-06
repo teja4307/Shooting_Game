@@ -97,6 +97,8 @@ public class EnemyHandler : MonoBehaviour
 
     private void EnemyMovementAndAttack()
     {
+        if (gameManager.isGameover)
+            return;
         foreach (var pair in enemyDictionary)
         {
             EnemyData data = pair.Value;
@@ -171,9 +173,13 @@ public class EnemyHandler : MonoBehaviour
 
         if (enemyDictionary[zombie].health <= 0)
         {
-            GameManager.kils++;
+            GameManager.kills++;
+            GameManager._inst.KillsCount();
+            
+            PlayerPrefs.SetInt("TotalKills", GameManager.kills);
+            
             //print("Kill count: " + GameManager.kils);
-            if (GameManager.kils == GameManager.target)
+            if (GameManager.kills == GameManager.target)
             {
                 gameManager.LeveComplete();
             }

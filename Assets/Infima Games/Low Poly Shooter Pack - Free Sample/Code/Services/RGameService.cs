@@ -2,7 +2,7 @@
 
 namespace InfimaGames.LowPolyShooterPack
 {
-    public interface IGameService
+    public interface RGameService
     {
         
     }

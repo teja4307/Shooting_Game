@@ -25,8 +25,8 @@ public class MenuHandler : MonoBehaviour
 
     private void INIT()
     {
-      
 
+        GameManager.isRetry = false;
         //PlayerPrefs.SetInt("CurrentLevel", GameManager.currentLevel);
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -45,6 +45,7 @@ public class MenuHandler : MonoBehaviour
     {
         scroll_Bar.SetActive(true);
         LevelLock();
+        GameManager.totalKills = PlayerPrefs.GetInt("FinalTotalKills");
         //PlayerPrefs.SetInt("CurrentLevel", GameManager.currentLevel);
       //   PlayerPrefs.GetInt("CurrentLevel");
        // SceneManager.LoadScene(1);

@@ -7,7 +7,7 @@ namespace InfimaGames.LowPolyShooterPack
     /// <summary>
     /// Sound Manager Service Interface.
     /// </summary>
-    public interface IAudioManagerService : IGameService
+    public interface IAudioManagerService : RGameService
     {
         /// <summary>
         /// Plays a one shot of the AudioClip.

@@ -561,13 +561,15 @@ namespace InfimaGames.LowPolyShooterPack
 		/// </summary>
 		public void OnTryFire(InputAction.CallbackContext context)
 		{
+		
 			//Block while the cursor is unlocked.
 			if (!cursorLocked)
 				return;
-
+			//print(context);
 			//Switch.
 			switch (context)
 			{
+				
 				//Started.
 				case {phase: InputActionPhase.Started}:
 					//Hold.
@@ -843,6 +845,9 @@ namespace InfimaGames.LowPolyShooterPack
 			//Stop Holstering.
 			holstering = false;
 		}
+
+
+
 
 		#endregion
 

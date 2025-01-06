@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour {
     private void Start ()
 	{
 		//Grab the game mode service, we need it to access the player character!
-		var gameModeService = ServiceLocator.Current.Get<IGameModeService>();
+		var gameModeService = ServiceLocator.Current.Get<RGameModeService>();
 		//Ignore the main player character's collision. A little hacky, but it should work.
 		Physics.IgnoreCollision(gameModeService.GetPlayerCharacter().GetComponent<Collider>(), GetComponent<Collider>());
 		

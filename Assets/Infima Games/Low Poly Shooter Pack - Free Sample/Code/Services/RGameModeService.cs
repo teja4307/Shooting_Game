@@ -5,7 +5,7 @@ namespace InfimaGames.LowPolyShooterPack
     /// <summary>
     /// Game Mode Service.
     /// </summary>
-    public interface IGameModeService : IGameService
+    public interface RGameModeService : RGameService
     {
         /// <summary>
         /// Returns the Player Character.

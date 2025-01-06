@@ -164,23 +164,12 @@
                 },
                 {
                     "name": "",
-                    "id": "8296c540-e14f-4d51-b70b-501abdfce15f",
+                    "id": "9df7a2d9-83da-40cb-8469-9f8f0609b4f3",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8cffb61f-8b30-49c6-8800-6616f944844d",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -197,56 +186,12 @@
                 },
                 {
                     "name": "",
-                    "id": "a3e7f07e-67e2-4d4b-b959-6515b1985c74",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "3612ffab-101e-4e71-bfcd-6bf41f67f0e4",
-                    "path": "<Keyboard>/r",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Reload",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e6887bb4-0be9-409a-a15d-8003ce2787e5",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "Hold",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Reload",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "70861d89-1a53-4df4-99fe-73a6861806f3",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "ScaleVector2(x=1.2,y=1.2)",
-                    "groups": "",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b85d03ba-6afe-4100-9072-d7bb950e8849",
-                    "path": "<Pointer>/delta",
-                    "interactions": "",
-                    "processors": "ScaleVector2(x=0.05,y=0.05)",
-                    "groups": "",
-                    "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -263,30 +208,8 @@
                 },
                 {
                     "name": "",
-                    "id": "5f849bc7-a9ec-4751-9161-18b41a439450",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Holster",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "150d2785-d381-47b7-aa2c-661f91c5e2f7",
                     "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e60493f8-e05e-437f-99af-9b031cdd3c0f",
-                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -329,30 +252,8 @@
                 },
                 {
                     "name": "",
-                    "id": "a0382ae6-6ecc-441e-a0a6-05fbc67523bb",
-                    "path": "<Gamepad>/dpad/left",
-                    "interactions": "Hold",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Inspect",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8a482ba6-21ca-4c8f-9727-9fbb2368f00f",
                     "path": "<Keyboard>/9",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Time Speed Up",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "5e79e440-5045-4bbc-a8a7-30167589d397",
-                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -373,30 +274,8 @@
                 },
                 {
                     "name": "",
-                    "id": "65c0a406-e8d6-434f-aeff-75269e0cbaaa",
-                    "path": "<Gamepad>/dpad/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Time Speed Down",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "64767df0-dd96-438b-878e-fe24248339dd",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Inventory Next",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ced9121a-056b-40fc-a663-9d1e81066727",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -412,17 +291,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Time Speed Toggle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6473f700-7e8d-42ea-a8d7-b52064620abb",
-                    "path": "<Gamepad>/leftStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -494,6 +362,17 @@
                 },
                 {
                     "name": "",
+                    "id": "b26715b8-2067-4e47-994f-85beca53c1d6",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "25b34351-c1db-469f-93c4-b2db927cb789",
                     "path": "<Mouse>/scroll",
                     "interactions": "",
@@ -505,30 +384,8 @@
                 },
                 {
                     "name": "",
-                    "id": "9837bdb8-e264-4c32-93bf-8013338f5c63",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Lock Cursor",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "e2c127bc-a838-4782-a49c-063fa51f1d76",
                     "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Tutorial",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6a9054cd-1ecc-4095-a089-d0e32b67ab2c",
-                    "path": "<Gamepad>/select",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

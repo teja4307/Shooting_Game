@@ -21,7 +21,11 @@ public class PlayerHandler : MonoBehaviour
 
     public static int health = 100;
     public EnemyHandler enemyHandler;
-
+    private void Awake()
+    {
+        health = 100;
+        isPlayerDead = false;
+    }
     private void Start()
     {
         health_img_bar = healthBar.transform.GetChild(0).GetComponent<Image>();

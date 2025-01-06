@@ -5,7 +5,7 @@ namespace InfimaGames.LowPolyShooterPack
     /// <summary>
     /// Game Mode Service.
     /// </summary>
-    public class GameModeService : IGameModeService
+    public class GameModeService : RGameModeService
     {
         #region FIELDS
         
